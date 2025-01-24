@@ -1,3 +1,5 @@
 ./venv
 /venv
 venv
+
+./task/node_modules

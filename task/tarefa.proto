@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+service TaskService {
+  // Define o RPC para criar uma tarefa
+  rpc CreateTask (Task) returns (TaskResponse);
+}
+
+message Task {
+  string nome = 2;      // Título da tarefa
+  string descricao = 3;   // Descrição da tarefa
+}
+
+message TaskResponse {
+  string message = 1;     // Mensagem de sucesso ou erro
+  repeated Task tasks = 2; // Lista de tarefas retornadas
+}
+
+message Acao {
+  string acao = 1;        // Ação a ser executada (exemplo: "create", "delete", etc.)
+}
